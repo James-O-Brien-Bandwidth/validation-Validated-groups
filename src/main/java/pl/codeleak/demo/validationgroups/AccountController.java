@@ -33,6 +33,9 @@ public class AccountController {
         return VIEW_STEP_ONE;
     }
 
+    //@Validated ---> Marks whole class for validation, meaning ALL VO validation beans must be applied. Can't pick and choose what to be validated in the VO
+
+    //Example 1
     @RequestMapping(value = "stepOne", method = RequestMethod.POST)
     public String stepOne(@Validated(Account.ValidationStepOne.class) Account account, Errors errors) {
         if (errors.hasErrors()) {
@@ -46,6 +49,7 @@ public class AccountController {
         return VIEW_STEP_TWO;
     }
 
+    //Example 2
     @RequestMapping(value = "stepTwo", method = RequestMethod.POST)
     public String stepTwo(@Validated(Account.ValidationStepTwo.class) Account account, Errors errors) {
         if (errors.hasErrors()) {

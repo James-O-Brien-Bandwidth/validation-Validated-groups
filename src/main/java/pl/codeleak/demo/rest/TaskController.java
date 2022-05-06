@@ -11,6 +11,8 @@ import javax.validation.Valid;
 @RequestMapping("rest")
 public class TaskController {
 
+    //@Valid ---> Marks whole class for validation, meaning ALL VO validation beans must be applied. Can't pick and choose what to be validated in the VO
+
     @RequestMapping(value = "task", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public Task createTask(@Valid @RequestBody Task task) {
         return task;
