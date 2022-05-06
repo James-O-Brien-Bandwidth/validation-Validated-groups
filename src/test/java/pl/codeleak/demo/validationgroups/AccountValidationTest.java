@@ -13,6 +13,7 @@ public class AccountValidationTest {
 
     private Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 
+    //Tests to show that additional validator class has been applied to an API: Error size has increased!
     @Test
     public void has4ViolationsWhileValidatingBothGroups() {
         Account account = new Account();
